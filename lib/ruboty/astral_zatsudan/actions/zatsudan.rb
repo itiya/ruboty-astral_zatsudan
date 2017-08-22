@@ -1,7 +1,7 @@
 module Ruboty
   module AstralZatsudan
     module Actions
-      class Fizzbuzz < Ruboty::Actions::Base
+      class Zatsudan < Ruboty::Actions::Base
         def call
           message.reply(zatsudan)
         end
@@ -9,10 +9,14 @@ module Ruboty
         private
 
         def zatsudan
-          case message
-            when "生きてる？" == message then "生きるとはどういうことでしょうか？"
-            when "死んでる？" == message then "Botに死はないのです……"
-            else "意図しない言動ですね"
+          if message.match(/生きてる？/)
+            '生きるとはどういうことでしょうか？'
+          elsif message.match(/死んでる？/) then
+            'Botに死は存在しないのです……'
+          elsif message.match(/つらい/) then
+            '人生，数値が上がったり下がったりするだけですから気楽に行きましょう！'
+          else
+            '意図しない言動ですね'
           end
         end
 
