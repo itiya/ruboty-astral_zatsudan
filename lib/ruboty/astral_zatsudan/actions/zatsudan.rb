@@ -10,9 +10,9 @@ module Ruboty
 
         def zatsudan
           if message.match(/生きてる？/)
-            '生きるとはどういうことでしょうか？'
+            '生きるとはどういうことなのでしょうか……？'
           elsif message.match(/死んでる？/) then
-            'Botに死は存在しないのです……'
+            'もし私が死んだとしても，魂は不滅ですよ'
           elsif message.match(/つらい/) then
             '人生，数値が上がったり下がったりするだけですから気楽に行きましょう！'
           else
