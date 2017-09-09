@@ -20,7 +20,12 @@ module Ruboty
       end
 
       def tsurai(message)
-        message.reply("人生，数値が上がったり下がったりするだけですから気楽に行きましょう！")
+        rep = [
+            "人生，数値が上がったり下がったりするだけですから気楽に行きましょう！",
+            "仕事で下手しても最悪首になるだけですよ？大丈夫です！",
+            "人の気持ちを考えるより，自分の仕事をキッチリ進める方が人の負担も少ないですよ？"
+        ].sample
+        message.reply(rep)
       end
 
       def sanpo(message)
