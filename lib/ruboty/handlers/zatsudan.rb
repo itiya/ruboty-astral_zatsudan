@@ -1,7 +1,7 @@
 module Ruboty
   module Handlers
     class Zatsudan < Base
-      env :ASTRAL_MASTER, "botのリプライ対象"
+      env :ASTRAL_MASTER, 'botのリプライ対象'
 
       on /生きてる？/, name: 'alive', description: '生きてるかどうか聞く'
       on /死んでる？/, name: 'dead', description: '死んでるかどうか聞く'
@@ -12,11 +12,11 @@ module Ruboty
       on /おはよう(ございます)?([!！])?/, name: 'hello', description: 'あさのあいさつ'
 
       def alive(message)
-        message.reply("生きるとはどういうことなんでしょうね……？")
+        message.reply('生きるとはどういうことなんでしょうね……？')
       end
 
       def dead(message)
-        message.reply("死んでるわけないじゃないですか！")
+        message.reply('死んでるわけないじゃないですか！')
       end
 
       def tsurai(message)
