@@ -1,7 +1,6 @@
-require "ruboty/astral_zatsudan/version"
-require "ruboty/handlers/fizzbuzz"
-require "ruboty/handlers/zatsudan"
-require "ruboty/handlers/suggest"
+require 'ruboty/astral_zatsudan/version'
+require 'ruboty/handlers/zatsudan'
+require 'ruboty/handlers/suggest'
 
 module Ruboty
   module AstralZatsudan

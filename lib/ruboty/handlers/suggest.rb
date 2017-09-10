@@ -1,4 +1,4 @@
-require "ruboty/astral_zatsudan/actions/suggest"
+require 'ruboty/astral_zatsudan/actions/suggest'
 
 module Ruboty
   module Handlers
