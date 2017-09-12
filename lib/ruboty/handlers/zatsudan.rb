@@ -5,8 +5,8 @@ module Ruboty
 
       on /生きてる？/, name: 'alive', description: '生きてるかどうか聞く'
       on /死んでる？/, name: 'dead', description: '死んでるかどうか聞く'
-      on /(つら|辛)い/, name: 'tsurai', description: 'つらい時の話'
-      on /(無)|(ニャオス)|(駄目)|(無理)/, name: 'sanpo', description: '散歩サジェスト'
+      on /((つら|辛)い)|(大変)|(きびしい)|(厳しい)|(にゃーん)/, name: 'tsurai', description: 'つらい時の話'
+      on /(無)|(ニャオス)|(駄目)|(無理)|(つかれた)|(疲れた)/, name: 'sanpo', description: '散歩サジェスト'
       on /(頭が)*ぼーっとしてる/, name: 'sanpo', description: '散歩サジェスト'
       on /annual report/, name: 'annual_report', description: '定時報告'
       on /おはよう(ございます)?([!！])?/, name: 'hello', description: 'あさのあいさつ'
