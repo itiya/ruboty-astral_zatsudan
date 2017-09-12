@@ -2,6 +2,7 @@ module Ruboty
   module Handlers
     class Zatsudan < Base
       env :ASTRAL_MASTER, 'botのリプライ対象'
+      env :ASTRAL_TASK_MORNING_URL, '朝のタスクリスト'
       env :ASTRAL_TASK_HOME_URL, '帰宅後のタスクリスト'
       env :ASTRAL_TASK_COMPANY_URL, '出社後のタスクリスト'
 
@@ -33,7 +34,7 @@ module Ruboty
       end
 
       def hello(message)
-        message.reply("おはようございます！\nやることを書き出して，今日も１日がんばりましょうね！")
+        message.reply("おはようございます！\nやることを書き出して，今日も１日がんばりましょうね！\n朝のタスクはこれです！\n#{ENV['ASTRAL_TASK_MORNING_URL']}")
       end
 
       def annual_report(message)
