@@ -3,6 +3,7 @@ module Ruboty
     class Zatsudan < Base
       env :ASTRAL_MASTER, 'botのリプライ対象'
       env :ASTRAL_TASK_HOME_URL, '帰宅後のタスクリスト'
+      env :ASTRAL_TASK_COMPANY_URL, '出社後のタスクリスト'
 
       on /生きてる？/, name: 'alive', description: '生きてるかどうか聞く'
       on /死んでる？/, name: 'dead', description: '死んでるかどうか聞く'
@@ -11,7 +12,8 @@ module Ruboty
       on /(頭が)*ぼーっとしてる/, name: 'sanpo', description: '散歩サジェスト'
       on /annual report/, name: 'annual_report', description: '定時報告'
       on /おはよう(ございます)?([!！])?/, name: 'hello', description: 'あさのあいさつ'
-      on /(((家|いえ)に([着つ])いた)|(帰宅)|(きたく))([！!])*/, name: 'kitaku', description: '帰宅した時'
+      on /(((家|いえ)に*([着つ])いた)|(帰宅)|(きたく))([！!])*/, name: 'kitaku', description: '帰宅した時'
+      on /(((会社|かいしゃ)に*([着つ])いた)|(出社)|(しゅっしゃ))([！!])*/, name: 'syussya', description: '出社した時'
 
       def alive(message)
         message.reply('生きるとはどういうことなんでしょうね……？')
@@ -39,7 +41,11 @@ module Ruboty
       end
 
       def kitaku(message)
-        message.reply("お仕事お疲れ様！ここからは自分の時間ですよ！\nタスク確認！頑張っていきましょう！\n#{ENV['ASTRAL_TASK_HOME_URL']}")
+        message.reply("お仕事お疲れ様，ここからは自分の時間ですよ！\nタスク確認！頑張っていきましょう！\n#{ENV['ASTRAL_TASK_HOME_URL']}")
+      end
+
+      def syussya(message)
+        message.reply("今日も頑張っていきましょう！タスクはこんな感じですよ！\n#{ENV['ASTRAL_TASK_COMPANY_URL']}")
       end
 
     end
