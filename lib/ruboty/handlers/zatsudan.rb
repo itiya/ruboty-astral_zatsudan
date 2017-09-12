@@ -45,7 +45,7 @@ module Ruboty
       end
 
       def syussya(message)
-        message.reply("今日も頑張っていきましょう！タスクはこんな感じですよ！\n#{ENV['ASTRAL_TASK_COMPANY_URL']}")
+        message.reply("お薬は飲みましたか？\n今日も頑張っていきましょう！タスクはこんな感じですよ！\n#{ENV['ASTRAL_TASK_COMPANY_URL']}")
       end
 
     end
