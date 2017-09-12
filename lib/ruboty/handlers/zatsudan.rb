@@ -25,7 +25,7 @@ module Ruboty
       end
 
       def sanpo(message)
-        message.reply("散歩してみてはどうですか？\n橋のあたりまで行ったり，市場のほうに行ってみたりすると良いですよ！")
+        message.reply("散歩してみてはどうですか？\n橋のあたりまで行ったり，市場のほうに行ってみたりすると良いですよ！\n目をつぶって15分くらい休むのも良いかもしれません")
       end
 
       def hello(message)
