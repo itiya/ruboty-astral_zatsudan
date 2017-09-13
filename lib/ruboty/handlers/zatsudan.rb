@@ -4,7 +4,6 @@ module Ruboty
       env :ASTRAL_MASTER, 'botのリプライ対象'
       env :ASTRAL_TASK_MORNING_URL, '朝のタスクリスト'
       env :ASTRAL_TASK_HOME_URL, '帰宅後のタスクリスト'
-      env :ASTRAL_TASK_COMPANY_URL, '出社後のタスクリスト'
       env :ASTRAL_TASK_URL, '全体タスクリスト'
       env :ASTRAL_NOTE_URL, '資料ノート'
       env :ASTRAL_CALENDAR_URL, 'カレンダー'
@@ -17,7 +16,6 @@ module Ruboty
       on /annual report/, name: 'annual_report', description: '定時報告'
       on /おはよう(ございます)?([!！])?/, name: 'hello', description: 'あさのあいさつ'
       on /(((家|いえ)に*([着つ])いた)|(帰宅)|(きたく))([！!])*/, name: 'kitaku', description: '帰宅した時'
-      on /(((会社|かいしゃ)に*([着つ])いた)|(出社)|(しゅっしゃ))([！!])*/, name: 'syussya', description: '出社した時'
       on /(何|なに)(すれば|したら|すると)(良い|いい)(と思う)*？/, name: 'suggest', description: 'なにをすればいいか（事前に設定しておいた）ヒントをくれます'
       on /カレンダー([だ出]して)*/, name: 'calendar', description: 'カレンダーを出してくれる'
 
@@ -35,7 +33,7 @@ module Ruboty
       end
 
       def sanpo(message)
-        message.reply("散歩してみてはどうですか？\n橋のあたりまで行ったり，市場のほうに行ってみたりすると良いですよ！\n目をつぶって15分くらい休むのも良いかもしれません")
+        message.reply("散歩してみてはどうですか？\n呼吸に気を遣って歩くとさらに良いです！\n目をつぶって15分くらい休むのも良いかもしれません")
       end
 
       def hello(message)
@@ -48,10 +46,6 @@ module Ruboty
 
       def kitaku(message)
         message.reply("お仕事お疲れ様，ここからは自分の時間ですよ！\nタスク確認！頑張っていきましょう！\n#{ENV['ASTRAL_TASK_HOME_URL']}")
-      end
-
-      def syussya(message)
-        message.reply("お薬は飲みましたか？頭に澱は溜まってませんか？\n今日も頑張っていきましょう！タスクはこんな感じですよ！\n#{ENV['ASTRAL_TASK_COMPANY_URL']}")
       end
 
       def suggest(message)
