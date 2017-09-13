@@ -7,6 +7,7 @@ module Ruboty
       env :ASTRAL_TASK_COMPANY_URL, '出社後のタスクリスト'
       env :ASTRAL_TASK_URL, '全体タスクリスト'
       env :ASTRAL_NOTE_URL, '資料ノート'
+      env :ASTRAL_CALENDAR_URL, 'カレンダー'
 
       on /生きてる？/, name: 'alive', description: '生きてるかどうか聞く'
       on /死んでる？/, name: 'dead', description: '死んでるかどうか聞く'
@@ -18,6 +19,7 @@ module Ruboty
       on /(((家|いえ)に*([着つ])いた)|(帰宅)|(きたく))([！!])*/, name: 'kitaku', description: '帰宅した時'
       on /(((会社|かいしゃ)に*([着つ])いた)|(出社)|(しゅっしゃ))([！!])*/, name: 'syussya', description: '出社した時'
       on /(何|なに)(すれば|したら|すると)(良い|いい)(と思う)*？/, name: 'suggest', description: 'なにをすればいいか（事前に設定しておいた）ヒントをくれます'
+      on /カレンダー([だ出]して)*/, name: 'calendar', description: 'カレンダーを出してくれる'
 
       def alive(message)
         message.reply('生きるとはどういうことなんでしょうね……？')
@@ -54,6 +56,10 @@ module Ruboty
 
       def suggest(message)
         message.reply("タスクリストをまず確認ですね\n#{ENV['ASTRAL_TASK_URL']}\nなにも無ければこっちからやることを整理してみましょう！\n#{ENV['ASTRAL_NOTE_URL']}")
+      end
+
+      def calendar(message)
+        message.reply("はい！\n#{ENV['ASTRAL_CALENDAR_URL']}")
       end
 
     end
