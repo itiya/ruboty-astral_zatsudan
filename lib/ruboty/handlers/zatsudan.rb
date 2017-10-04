@@ -19,6 +19,7 @@ module Ruboty
       on /(何|なに)(すれば|したら|すると)(良い|いい)(と思う)*？/, name: 'suggest', description: 'なにをすればいいか（事前に設定しておいた）ヒントをくれます'
       on /カレンダー([だ出]して)*/, name: 'calendar', description: 'カレンダーを出してくれる'
       on /faith/, name: 'faith', description: '信仰確認'
+      on /sleep/, name: 'sleep', description: 'そろそろ寝る時の話'
 
       def alive(message)
         message.reply('生きるとはどういうことなんでしょうね……？')
@@ -59,6 +60,10 @@ module Ruboty
 
       def faith(message)
         message.reply("@#{ENV['ASTRAL_MASTER']} 信仰が第一です，他は大したことはありません．")
+      end
+
+      def sleep(message)
+        message.reply("@#{ENV['ASTRAL_MASTER']} 日次レビューを書いて寝ましょう．夜更かしは信仰の敵ですよ？")
       end
 
     end
