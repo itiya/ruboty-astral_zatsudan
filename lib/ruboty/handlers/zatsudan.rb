@@ -39,7 +39,7 @@ module Ruboty
       end
 
       def hello(message)
-        message.reply("おはようございます！\nやることを書き出して，今日も１日がんばりましょうね！\n朝のタスクはこれです！\n#{ENV['ASTRAL_TASK_MORNING_URL']}")
+        message.reply("おはようございます！\nやることを書き出して，今日も１日がんばりましょうね！\n\"朝タスク\"でタスク取得，\"朝タスク終了\"でタスク完了です！")
       end
 
       def annual_report(message)
@@ -47,7 +47,7 @@ module Ruboty
       end
 
       def kitaku(message)
-        message.reply("お仕事お疲れ様，ここからは自分の時間ですよ！\nタスク確認！頑張っていきましょう！\n#{ENV['ASTRAL_TASK_HOME_URL']}")
+        message.reply("お仕事お疲れ様，ここからは自分の時間ですよ！\n\"夜タスク\"でタスク取得，\"夜タスク終了\"でタスク完了です！")
       end
 
       def suggest(message)
